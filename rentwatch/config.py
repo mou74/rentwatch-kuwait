@@ -29,6 +29,14 @@ def load_config():
                 cfg[k].update(v)
             else:
                 cfg[k] = v
+    # config.local.json (git-ignored) overrides config.json on this machine only
+    local_path = CONFIG_PATH.with_name("config.local.json")
+    if local_path.exists():
+        for k, v in json.loads(local_path.read_text(encoding="utf-8")).items():
+            if isinstance(v, dict) and isinstance(cfg.get(k), dict):
+                cfg[k].update(v)
+            else:
+                cfg[k] = v
     # secrets.json (git-ignored) holds passwords/tokens: {"email": {...}, "telegram": {...}}
     secrets_path = CONFIG_PATH.with_name("secrets.json")
     if secrets_path.exists():

@@ -9,6 +9,7 @@ if ! gh repo view "$USER/$REPO" >/dev/null 2>&1; then
   gh repo create "$REPO" --public --description "RentWatch Kuwait - rental listing monitor"
 fi
 git remote get-url origin >/dev/null 2>&1 || git remote add origin "https://github.com/$USER/$REPO.git"
+git pull --rebase -q origin main 2>/dev/null || true
 git push -u origin main
 echo "→ enabling GitHub Pages (main → /docs)"
 gh api -X POST "repos/$USER/$REPO/pages" -f build_type=legacy -f 'source[branch]=main' -f 'source[path]=/docs' >/dev/null 2>&1 || \
