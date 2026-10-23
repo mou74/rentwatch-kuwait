@@ -82,6 +82,22 @@
       "boshamlan": [
         "hawally-governorate/salwa"
       ]
+    },
+    {
+      "name": "بيان",
+      "aliases": [
+        "Bayan",
+        "بيان"
+      ],
+      "opensooq": [
+        {
+          "gov": "حولي",
+          "nhood": "بيان"
+        }
+      ],
+      "boshamlan": [
+        "hawally-governorate/bayan"
+      ]
     }
   ],
   "areas_suggested_disabled": [
@@ -115,21 +131,6 @@
       ],
       "boshamlan": [
         "hawally-governorate/jabriya"
-      ]
-    },
-    {
-      "name": "بيان",
-      "aliases": [
-        "Bayan"
-      ],
-      "opensooq": [
-        {
-          "gov": "حولي",
-          "nhood": "بيان"
-        }
-      ],
-      "boshamlan": [
-        "hawally-governorate/bayan"
       ]
     },
     {
