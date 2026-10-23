@@ -22,8 +22,9 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Cloud sources (4Sale blocks GitHub IPs; it is covered by the local Mac job)
-        run: echo '{"sources": ["opensooq", "boshamlan"]}' > config.local.json
+      - name: Cloud sources (4Sale blocks GitHub IPs, it is covered by the local Mac job)
+        run: |
+          printf '%s\n' '{"sources": ["opensooq", "boshamlan"]}' > config.local.json
       - name: Check listings and notify
         env:
           RENTWATCH_SMTP_USER: ${{ secrets.SMTP_USER }}
