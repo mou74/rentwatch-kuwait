@@ -1,0 +1,182 @@
+{
+  "_comment": "إعدادات مراقب الشقق. عدّل الأرقام والمناطق كما تريد. المناطق في areas هي المفعّلة؛ انقل أي منطقة من areas_suggested_disabled إلى areas لتفعيلها.",
+  "areas": [
+    {
+      "name": "السالمية",
+      "aliases": [
+        "السالميه",
+        "سالمية",
+        "سالميه",
+        "Salmiya",
+        "Salmiyah"
+      ],
+      "opensooq": [
+        {
+          "gov": "حولي",
+          "nhood": "السالمية"
+        }
+      ],
+      "boshamlan": [
+        "hawally-governorate/salmiya"
+      ]
+    },
+    {
+      "name": "حولي",
+      "aliases": [
+        "حولى",
+        "Hawally",
+        "Hawalli",
+        "ميدان حولي"
+      ],
+      "opensooq": [
+        {
+          "gov": "حولي",
+          "nhood": "حولي"
+        }
+      ],
+      "boshamlan": [
+        "hawally-governorate/hawally",
+        "hawally-governorate/maidan-hawally"
+      ],
+      "exclude": [
+        "محافظة حولي"
+      ]
+    },
+    {
+      "name": "صباح السالم",
+      "aliases": [
+        "صباح سالم",
+        "صباح السالم",
+        "Sabah Al Salem",
+        "Sabah Al-Salem",
+        "Sabah AlSalem"
+      ],
+      "opensooq": [
+        {
+          "gov": "مبارك-الكبير",
+          "nhood": "صباح-السالم"
+        }
+      ],
+      "boshamlan": [
+        "mubarak-al-kabeer-governorate/sabah-al-salem"
+      ],
+      "exclude": [
+        "علي صباح السالم",
+        "علي صباح",
+        "ام الهيمان",
+        "أم الهيمان"
+      ]
+    },
+    {
+      "name": "سلوى",
+      "aliases": [
+        "سلوي",
+        "Salwa"
+      ],
+      "opensooq": [
+        {
+          "gov": "حولي",
+          "nhood": "سلوى"
+        }
+      ],
+      "boshamlan": [
+        "hawally-governorate/salwa"
+      ]
+    }
+  ],
+  "areas_suggested_disabled": [
+    {
+      "name": "الرميثية",
+      "aliases": [
+        "الرميثيه",
+        "Rumaithiya"
+      ],
+      "opensooq": [
+        {
+          "gov": "حولي",
+          "nhood": "الرميثية"
+        }
+      ],
+      "boshamlan": [
+        "hawally-governorate/rumaithiya"
+      ]
+    },
+    {
+      "name": "الجابرية",
+      "aliases": [
+        "الجابريه",
+        "Jabriya"
+      ],
+      "opensooq": [
+        {
+          "gov": "حولي",
+          "nhood": "الجابرية"
+        }
+      ],
+      "boshamlan": [
+        "hawally-governorate/jabriya"
+      ]
+    },
+    {
+      "name": "بيان",
+      "aliases": [
+        "Bayan"
+      ],
+      "opensooq": [
+        {
+          "gov": "حولي",
+          "nhood": "بيان"
+        }
+      ],
+      "boshamlan": [
+        "hawally-governorate/bayan"
+      ]
+    },
+    {
+      "name": "مشرف",
+      "aliases": [
+        "Mishref"
+      ],
+      "opensooq": [
+        {
+          "gov": "حولي",
+          "nhood": "مشرف"
+        }
+      ],
+      "boshamlan": [
+        "hawally-governorate/mishref"
+      ]
+    }
+  ],
+  "price_min": 300,
+  "price_max": 400,
+  "rooms": 3,
+  "include_unpriced": true,
+  "include_unknown_rooms": false,
+  "require_new_finish_for_alerts": true,
+  "max_pages_per_source": 4,
+  "request_timeout": 30,
+  "sources": [
+    "4sale",
+    "opensooq",
+    "boshamlan"
+  ],
+  "db_path": "data/rentwatch.db",
+  "dashboard_path": "docs/index.html",
+  "notify": {
+    "macos": true,
+    "email": {
+      "enabled": false,
+      "smtp_host": "smtp.gmail.com",
+      "smtp_port": 465,
+      "smtp_user": "",
+      "smtp_password": "",
+      "to": ""
+    },
+    "telegram": {
+      "enabled": false,
+      "bot_token": "",
+      "chat_id": ""
+    }
+  }
+}
