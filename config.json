@@ -178,5 +178,6 @@
       "bot_token": "",
       "chat_id": ""
     }
-  }
+  },
+  "interval_minutes": 10
 }

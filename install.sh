@@ -5,7 +5,7 @@ cd "$(dirname "$0")"
 PROJECT="$(pwd)"
 LABEL="com.rentwatch.kuwait"
 PLIST="$HOME/Library/LaunchAgents/$LABEL.plist"
-INTERVAL="${1:-1800}"
+INTERVAL="${1:-600}"
 mkdir -p "$HOME/Library/LaunchAgents" logs
 [ -x .venv/bin/python ] || { python3 -m venv .venv && .venv/bin/pip install -q -r requirements.txt; }
 cat > "$PLIST" <<PL

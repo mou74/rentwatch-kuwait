@@ -1,6 +1,6 @@
 # 🏠 مراقب شقق الإيجار – الكويت (RentWatch)
 
-منصة شخصية تفحص كل **30 دقيقة** إعلانات شقق الإيجار في الكويت من:
+منصة شخصية تفحص كل **10 دقائق** إعلانات شقق الإيجار في الكويت من:
 
 | المصدر | الرابط | طريقة القراءة |
 |---|---|---|
@@ -37,7 +37,7 @@ run.sh  →  python -m rentwatch run
 ```bash
 ./install.sh
 ```
-يثبّت مهمة `launchd` تعمل كل 30 دقيقة وعند تسجيل الدخول. السجل في `logs/rentwatch.log`.
+يثبّت مهمة `launchd` تعمل كل 10 دقائق وعند تسجيل الدخول. السجل في `logs/rentwatch.log`.
 
 لوحة العرض:
 ```bash
@@ -83,7 +83,7 @@ run.sh  →  python -m rentwatch run
    ```
 2. في المستودع: **Settings → Secrets and variables → Actions → New repository secret** وأضف ما تريد:
    `SMTP_USER`, `SMTP_PASSWORD`, `EMAIL_TO`, `TELEGRAM_TOKEN`, `TELEGRAM_CHAT_ID`
-3. **Actions → RentWatch Kuwait → Run workflow** للتجربة الأولى. بعدها يعمل تلقائياً كل 30 دقيقة (`.github/workflows/watch.yml`) ويحفظ ما شاهده في المستودع.
+3. **Actions → RentWatch Kuwait → Run workflow** للتجربة الأولى. بعدها يعمل تلقائياً كل 10 دقائق (`.github/workflows/watch.yml`) ويحفظ ما شاهده في المستودع.
 4. (اختياري) **Settings → Pages → Branch: main / folder: /docs** لتفتح لوحة العرض من هاتفك على `https://<USER>.github.io/rentwatch-kuwait/`.
 
 ملاحظة: الحساب المجاني يعطي 2000 دقيقة/شهر للمستودعات الخاصة؛ الفحص يستهلك ~1 دقيقة × 48/يوم ≈ 1450 دقيقة/شهر. لو اقتربت من الحد غيّر الجدول إلى `*/45` أو اجعل المستودع عاماً (غير محدود).

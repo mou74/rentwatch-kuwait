@@ -77,9 +77,9 @@ footer{color:var(--muted);font-size:12px;text-align:center;padding:20px}
 <input id="f-q" placeholder="بحث في النص…">
 </div>
 <div id="grid" class="grid"></div>
-<div id="empty" class="empty" hidden>لا توجد إعلانات هنا بعد. الفحص التالي خلال 30 دقيقة.</div>
+<div id="empty" class="empty" hidden>لا توجد إعلانات هنا بعد. الفحص التالي خلال __INTERVAL__ دقائق.</div>
 </main>
-<footer>يتم الفحص تلقائياً كل 30 دقيقة من 4Sale و OpenSooq و بوشملان · آخر توليد للصفحة: __GENERATED__</footer>
+<footer>يتم الفحص تلقائياً كل __INTERVAL__ دقائق من 4Sale و OpenSooq و بوشملان · آخر توليد للصفحة: __GENERATED__</footer>
 <script>
 const DATA = __DATA__;
 const LABELS = __LABELS__;
@@ -134,6 +134,7 @@ def build(store, cfg, out_path):
             .replace("__LABELS__", json.dumps(SOURCE_LABELS, ensure_ascii=False))
             .replace("__STATS__", json.dumps(store.stats(), ensure_ascii=False))
             .replace("__CRITERIA__", criteria)
+            .replace("__INTERVAL__", str(cfg.get("interval_minutes", 30)))
             .replace("__GENERATED__", datetime.now().strftime("%Y-%m-%d %H:%M")))
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(html, encoding="utf-8")
